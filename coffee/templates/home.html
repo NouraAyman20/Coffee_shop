@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h1>Welcome to our café</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for coffee in coffee %}
+    <div class="col mb-4">
+      <div class="card h-100">
+        <img src="{{ coffee.image }}" class="card-img-top" alt="{{ coffee.name }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ coffee.name }}</h5>
+          <p class="card-text">E£ {{ coffee.price }}</p>
+          <a href="{% url 'coffee:detail' coffee.id %}" class="btn btn-coffee mt-auto">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block head %}
+<style>
+  .btn-coffee {
+    color: #fff;
+    background-color: #a17a5b; /* Coffee-colored background */
+    border-color: #a17a5b; /* Coffee-colored border */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  .btn-coffee:hover {
+    background-color: #896346; /* Darker coffee color on hover */
+    border-color: #896346; /* Darker coffee color on hover */
+  }
+
+  .btn-coffee:focus {
+    box-shadow: 0 0 0 0.2rem rgba(161, 122, 91, 0.5); /* Focus color for accessibility */
+  }
+</style>
+{% endblock %}

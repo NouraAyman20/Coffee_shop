@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+  body {
+    background-color: #ebe5da; /* Light beige background color */
+  }
+  .bg-coffee {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230411/pngtree-coffee-beans-coffee-plant-background-vintage-poster-image_2267692.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .jumbotron-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  }
+  .text-coffee {
+    color: #6f4e37;
+  }
+  .bg-light-coffee {
+    background-color: #f4f1ea;
+  }
+  
+  .section-content,
+  .visit-us-content,
+  .specialties-content {
+    background-color: #e1d6c5; /* Lighter coffee background for specialties */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  .specialties-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .specialties-list li {
+    margin-bottom: 10px;
+  }
+  .visit-us-address {
+    font-style: normal;
+    margin-bottom: 0;
+  }
+  .btn-coffee {
+    color: #fff;
+    background-color: #a17a5b; /* Coffee-colored background */
+    border-color: #a17a5b; /* Coffee-colored border */
+  }
+  .btn-coffee:hover {
+    background-color: #896346; /* Darker coffee color on hover */
+    border-color: #896346; /* Darker coffee color on hover */
+  }
+  .btn-coffee:focus {
+    box-shadow: 0 0 0 0.2rem rgba(161, 122, 91, 0.5); /* Focus color for accessibility */
+  }
+  .btn-outline-coffee {
+    color: #6f4e37;
+    border-color: #6f4e37;
+  }
+  .btn-outline-coffee:hover {
+    color: #fff;
+    background-color: #6f4e37; /* Coffee-colored background on hover */
+    border-color: #6f4e37; /* Coffee-colored border on hover */
+  }
+  .btn-outline-coffee:focus {
+    box-shadow: 0 0 0 0.2rem rgba(111, 78, 55, 0.5); /* Focus color for accessibility */
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid bg-coffee">
+    <div class="overlay"></div>
+    <div class="container text-center jumbotron-content">
+        <h1 class="display-4 mb-4">Welcome to Our Coffee Shop</h1>
+        <p class="lead mb-4">Experience the finest coffee blends in town.</p>
+        <a href="{% url 'coffee:coffee_store' %}" class="btn btn-coffee btn-lg">Explore Our Menu</a>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-content">
+                    <h2 class="text-coffee text-center mb-4">About Us</h2>
+                    <p class="lead text-center mb-0">Discover our commitment to quality and passion for coffee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="specialties-content">
+                    <h2 class="text-coffee text-center mb-4">Our Specialties</h2>
+                    <ul class="specialties-list mt-4">
+                        <li>Artisanal Coffee Blends</li>
+                        <li>Signature Espresso Drinks</li>
+                        <li>Decadent Pastries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-content visit-us-content">
+                    <h2 class="text-coffee text-center mb-4">Visit Us</h2>
+                    <p class="lead text-center mb-3">Plan your visit and enjoy our cozy ambiance.</p>
+                    <p class="visit-us-address text-center mb-0">
+                        123 Coffee Street<br>
+                        Cityville, State, Zip Code<br>
+                        United States
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 text-center">
+    <div class="container">
+        <h2 class="text-coffee">Follow Us</h2>
+        <div class="btn-group mt-3" role="group" aria-label="Follow Us">
+            <a href="#" class="btn btn-outline-coffee"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="btn btn-outline-coffee"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="btn btn-outline-coffee"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
