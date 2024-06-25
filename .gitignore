@@ -1,0 +1,18 @@
+# Ignore the virtual environment directory
+venv/
+coffee2/
+env/
+
+# Ignore compiled files
+*.pyc
+__pycache__/
+
+# Ignore database files
+*.sqlite3
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
